@@ -9,6 +9,7 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="Inventory.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     
 </head>
@@ -180,6 +181,22 @@
 
 
           }
+
+          function deletitems(){
+
+              swal({
+               title: "Are you sure?",
+                text: "Once deleted, you will not be able to recover this imaginary file!",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,})
+
+                document.getElementById('row3').style ="display:none"
+          }
+
+          function additems(){
+            document.getElementById('row2').style= "display:block"
+          }
           </script>
       <h2>Section title</h2>
       <div class="table-responsive ">
@@ -207,7 +224,7 @@
                   <td><input type="text" class="form-control" id="pvata" ></td>
                   <td><input type="text" class="form-control" readonly id="stotala" > </td>
                 </tr>
-                <tr>
+                <tr id="row2" style="display:none">
                   <th scope="row">2</th>
                   <td><input type="text" class="form-control" value="Samsung" readonly></td>
                   <td><input type="text" class="form-control" value="1500" readonly id="upriceb"></td>
@@ -217,7 +234,7 @@
                   <td><input type="text" class="form-control" id="pvatb"></td>
                   <td><input type="text" class="form-control" id="stotalb" readonly ></td>
                 </tr>
-                <tr>
+                <tr id="row3">
                   <th scope="row">3</th>
                   <td><input type="text" class="form-control" value="Nokia" readonly></td>
                   <td><input type="text" class="form-control" value="1500" readonly id="upricec"></td>
@@ -244,11 +261,11 @@
               
             </table>
             <tr>
-                <td><button type="button" class="btn btn-success bg-success  float-left  " >Add Items</button></td>
-                <td><button type="button" class="btn btn-danger bg-danger ml-4">Cancle Previous Item</button></td>
+                <td><button type="b" onclick="additems()" class="btn btn-success bg-success  float-left  " >Add Items</button></td>
+                <td><button type="button" onclick="deletitems ()" class="btn btn-danger bg-danger ml-4">Cancle Previous Item</button></td>
             </tr>
       </div>
-            
+      
       <form>
           <div class="row mt-5">
               <div class="col ">
